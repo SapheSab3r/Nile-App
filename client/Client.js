@@ -1,9 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+//import React, { useState, useEffect } from 'react';
+
 
 import NavBar from './NavBar';
 import Code from './Code';
 import Package from './Package';
+
+
+// function App() {
+//   useEffect(() => {
+//     fetchPackage();
+//   }, []);
+// }
+
+// const fetchPakage = async () => {
+//   const data = await fetch(
+//     ""
+//   );
+//   const packages = await data.json();
+// };
+
 
 export default function Client() {
   return (

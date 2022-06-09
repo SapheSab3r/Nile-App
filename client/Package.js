@@ -1,4 +1,6 @@
-import { StyleSheet, Text, View, Pressable, Alert, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { EvilIcons } from '@expo/vector-icons';
 
 
 export default function App() {
@@ -35,6 +37,14 @@ export default function App() {
                     <Text style={styles.buttonText}>Pick Up</Text>
 
                 </Pressable>
+
+            </View>
+
+
+            {/*this is the search bar*/}
+            <View style={styles.searchBar}>
+                <EvilIcons name="search" size={30} style={styles.searchIcon} />
+                <TextInput placeholder="Search" style={styles.searchText} />
 
             </View>
 
@@ -89,6 +99,27 @@ const styles = StyleSheet.create({
         borderColor: '#0b409c',
         borderRadius: '20%',
     },
+
+    searchBar: {
+        margin: 10,
+        height: 40,
+        borderWidth: 2,
+        borderRadius: 20,
+        borderColor: '#387dd9',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+    },
+
+    searchIcon: {
+        padding: 5,
+
+    },
+
+    searchText: {
+        padding: 2,
+        fontSize: 20,
+    }
 
 
 });

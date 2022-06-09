@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, Alert, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Alert, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 
 
 export default function App() {
@@ -30,16 +30,13 @@ export default function App() {
                         { backgroundColor: pressed ? '#0b409c' : '#ffffff' },
                         styles.buttonHolder2,
                     ]}
-                    onPress={callOnPress}
-                >
+                    onPress={callOnPress}>
 
                     <Text style={styles.buttonText}>Pick Up</Text>
 
                 </Pressable>
 
             </View>
-
-
 
         </View>
 

@@ -19,7 +19,11 @@ export default function Client() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
+    width: '100%',
+    height: '100%',
+    flex: '1',
+    flexDirection: 'column',
     backgroundColor: '#fff',
   },
 

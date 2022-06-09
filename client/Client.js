@@ -11,7 +11,7 @@ export default function Client() {
       <NavBar />
       <Code />
       <Package />
-      
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );

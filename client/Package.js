@@ -3,95 +3,95 @@ import { StyleSheet, Text, View, Pressable, Alert, ScrollView, TextInput } from 
 
 export default function App() {
 
-    const callOnPress=()=>{
+    const callOnPress = () => {
         Alert.alert('pressed')
     }
 
-  return (  
-    <View style={styles.mainContainer}>
-        <View style={styles.packages}>
-        
-        <Text style = {styles.header}>Packages Awaiting:</Text>
+    return (
+        <View style={styles.mainContainer}>
+            <View style={styles.packages}>
 
-        <Pressable 
-            style = {({pressed}) => [
-                {backgroundColor: pressed ? '#0b409c' : '#ffffff'}, 
-                styles.buttonHolder1,
-                ]}
-            onPress = {callOnPress}
+                <Text style={styles.header}>Packages Awaiting:</Text>
+
+                <Pressable
+                    style={({ pressed }) => [
+                        { backgroundColor: pressed ? '#0b409c' : '#ffffff' },
+                        styles.buttonHolder1,
+                    ]}
+                    onPress={callOnPress}
                 >
-            
-            <Text style = {styles.buttonText}> Arrival</Text>
 
-        </Pressable>
+                    <Text style={styles.buttonText}> Arrival</Text>
 
-        <Pressable 
-            style = {({pressed}) => [
-                {backgroundColor: pressed ? '#0b409c' : '#ffffff'}, 
-                styles.buttonHolder2,
-                ]}
-            onPress = {callOnPress}
+                </Pressable>
+
+                <Pressable
+                    style={({ pressed }) => [
+                        { backgroundColor: pressed ? '#0b409c' : '#ffffff' },
+                        styles.buttonHolder2,
+                    ]}
+                    onPress={callOnPress}
                 >
-            
-            <Text style = {styles.buttonText}>Pick Up</Text>
 
-        </Pressable>
+                    <Text style={styles.buttonText}>Pick Up</Text>
+
+                </Pressable>
+
+            </View>
+
+
 
         </View>
 
-
-
-    </View>
-        
-  );
+    );
 }
 
 const styles = StyleSheet.create({
-   packages:{
-       width: "100%",
-       flexDirection:'row',
-       flexWrap:'wrap',
-       justifyContent:'space-between',
-   },
+    packages: {
+        width: "100%",
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+    },
 
-   header:{
-       marginBottom: 25,
-       fontSize: 25,
-       paddingLeft: 15,
-   },
+    header: {
+        marginBottom: 25,
+        fontSize: 25,
+        paddingLeft: 15,
+    },
 
-   buttonHolder1:{
-       width: '45%',
-       height:'40%',
-       padding: 5,
-       marginLeft: 10,
-       flexDirection:'row',
-       flexWrap:'wrap',
-       justifyContent:'center',
-       textAlign:'center',
-       borderWidth: 2,
-       borderColor: '#0b409c',
-       borderRadius: '20%',
-   },
-
-   buttonText:{
-       fontSize:20,
-
-   },
-
-   buttonHolder2:{
+    buttonHolder1: {
         width: '45%',
-        height:'40%',
+        height: '40%',
         padding: 5,
-        marginRight: 10,
-        flexDirection:'row',
-        flexWrap:'wrap',
-        justifyContent:'center',
-        textAlign:'center',
+        marginLeft: 12,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        textAlign: 'center',
         borderWidth: 2,
         borderColor: '#0b409c',
         borderRadius: '20%',
-},
+    },
+
+    buttonText: {
+        fontSize: 20,
+
+    },
+
+    buttonHolder2: {
+        width: '45%',
+        height: '40%',
+        padding: 5,
+        marginRight: 12,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        textAlign: 'center',
+        borderWidth: 2,
+        borderColor: '#0b409c',
+        borderRadius: '20%',
+    },
 
 
 });

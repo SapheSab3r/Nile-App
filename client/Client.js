@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-//import React, { useState, useEffect } from 'react';
 
 
 import NavBar from './NavBar';
@@ -30,6 +29,7 @@ export default function Client() {
       <Package />
 
       <StatusBar style="auto" />
+
     </SafeAreaView>
   );
 }

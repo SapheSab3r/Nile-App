@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Keyboard, TextInput } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
-
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView } from 'react-native-web';
 
 export default class Package extends Component {
     constructor(props) {
         super(props);
-        this.state = {colorId:0};
+        this.state = { colorId: 0 };
     }
 
-    changeColor=(id) => {
-        this.setState({colorId: id});
-
+    changeColor = (id) => {
+        this.setState({ colorId: id });
     }
 
     render() {
+
+
         return (
             <View style={styles.mainContainer} >
+                <StatusBar style='auto' />
+
                 <View style={styles.packages}>
 
                     <Text style={styles.header}>Packages Awaiting:</Text>
@@ -32,12 +36,20 @@ export default class Package extends Component {
                     </TouchableOpacity>
 
                 </View>
-
                 {/*this is the search bar*/}
                 <View style={styles.searchBar} >
                     <EvilIcons name="search" size={30} style={styles.searchIcon} />
-                    <TextInput placeholder="Search" style={styles.searchText} />
+                    <TextInput placeholder="Search" value={this.state.textInput} style={styles.searchText} />
                 </View>
+
+
+                {/*listing all the deliveries*/}
+                <View style={styles.info}>
+
+                </View>
+
+
+
 
             </View >
 
@@ -105,7 +117,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         fontSize: 20,
-        color:'white',
+        color: 'white',
     },
 
     buttonHolder2: {
@@ -141,5 +153,14 @@ const styles = StyleSheet.create({
     searchText: {
         padding: 2,
         fontSize: 20,
-    }
+    },
+
+    info: {
+        height: 90,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#feffcd',
+        borderRadius: 10,
+        margin: 10,
+    },
 });

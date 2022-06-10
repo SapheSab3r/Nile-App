@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     left: {
         position: 'relative',
         width: '85%',
-        height: '45%',
+        height: '42%',
         margin: 15,
         flexWrap: 'wrap',
         alignItems: 'center',
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
     right: {
         width: '85%',
-        height: '45%',
+        height: '42%',
         margin: 15,
         flexWrap: 'wrap',
         alignItems: 'center',

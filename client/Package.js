@@ -1,56 +1,48 @@
-import { StyleSheet, Text, View, Pressable, Alert, TextInput } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Alert, TextInput } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 
 
-export default function App() {
-
-    const callOnPress = () => {
-        Alert.alert('pressed')
+export default class Package extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {colorId:0};
     }
 
-    return (
-        <View style={styles.mainContainer}>
-            <View style={styles.packages}>
+    changeColor=(id) => {
+        this.setState({colorId: id});
 
-                <Text style={styles.header}>Packages Awaiting:</Text>
+    }
 
-                <Pressable
-                    style={({ pressed }) => [
-                        { backgroundColor: pressed ? '#0b409c' : '#ffffff' },
-                        styles.buttonHolder1,
-                    ]}
-                    onPress={callOnPress}
-                >
+    render() {
+        return (
+            <View style={styles.mainContainer} >
+                <View style={styles.packages}>
 
-                    <Text style={styles.buttonText}> Arrival</Text>
+                    <Text style={styles.header}>Packages Awaiting:</Text>
 
-                </Pressable>
+                    <TouchableOpacity style={this.state.colorId === 1 ? styles.pressed : styles.buttonHolder1}
+                        onPress={() => this.changeColor(1)}>
+                        <Text style={this.state.colorId === 1 ? styles.textPressed : styles.buttonText}> Arrival</Text>
+                    </TouchableOpacity>
 
-                <Pressable
-                    style={({ pressed }) => [
-                        { backgroundColor: pressed ? '#0b409c' : '#ffffff' },
-                        styles.buttonHolder2,
-                    ]}
-                    onPress={callOnPress}>
+                    <TouchableOpacity style={this.state.colorId === 2 ? styles.pressed2 : styles.buttonHolder2}
+                        onPress={() => this.changeColor(2)}>
+                        <Text style={this.state.colorId === 2 ? styles.textPressed : styles.buttonText}>Pick Up</Text>
+                    </TouchableOpacity>
 
-                    <Text style={styles.buttonText}>Pick Up</Text>
+                </View>
 
-                </Pressable>
+                {/*this is the search bar*/}
+                <View style={styles.searchBar} >
+                    <EvilIcons name="search" size={30} style={styles.searchIcon} />
+                    <TextInput placeholder="Search" style={styles.searchText} />
+                </View>
 
-            </View>
+            </View >
 
-
-            {/*this is the search bar*/}
-            <View style={styles.searchBar}>
-                <EvilIcons name="search" size={30} style={styles.searchIcon} />
-                <TextInput placeholder="Search" style={styles.searchText} />
-
-            </View>
-
-        </View>
-
-    );
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -62,7 +54,7 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        marginBottom: 25,
+        marginBottom: 20,
         fontSize: 25,
         paddingLeft: 15,
     },
@@ -81,9 +73,39 @@ const styles = StyleSheet.create({
         borderRadius: '20%',
     },
 
+    pressed: {
+        width: '45%',
+        height: '40%',
+        padding: 5,
+        marginLeft: 12,
+        textAlign: 'center',
+        borderWidth: 2,
+        borderRadius: '20%',
+        borderColor: '#0b409c',
+        backgroundColor: '#0b409c',
+    },
+
+    pressed2: {
+        width: '45%',
+        height: '40%',
+        padding: 5,
+        marginRight: 12,
+        textAlign: 'center',
+        borderWidth: 2,
+        borderRadius: '20%',
+        borderColor: '#0b409c',
+        backgroundColor: '#0b409c',
+    },
+
     buttonText: {
         fontSize: 20,
+    },
 
+    textPressed: {
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontSize: 20,
+        color:'white',
     },
 
     buttonHolder2: {
@@ -120,5 +142,4 @@ const styles = StyleSheet.create({
         padding: 2,
         fontSize: 20,
     }
-
 });

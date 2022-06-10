@@ -12,7 +12,7 @@ export default function App() {
       </View>
 
       <View style={styles.container}>
-        <MaterialCommunityIcons name="menu" size={45} style={styles.nav} />
+        <MaterialCommunityIcons name="menu" size={35} style={styles.nav} />
       </View>
 
     </View>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   NavBar: {
     top: 0,
     width: '100%',
-    height: '10%',
+    height: '9%',
     flexDirection: 'row',
     alignItems: 'center',
     textAlign: 'center',
@@ -43,21 +43,21 @@ const styles = StyleSheet.create({
 
   Header: {
     margin: 10,
-    fontSize: 35,
+    fontSize: 30,
     color: 'white',
   },
 
   container: {
     width: 50,
-    height: 50,
+    height: 40,
     margin: 10,
     borderRadius: '10%',
     borderWidth: 2,
     borderColor: 'white',
+    alignItems: 'center',
   },
 
   nav: {
-    position: 'absolute',
     color: 'white',
   }
 });

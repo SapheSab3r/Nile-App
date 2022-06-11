@@ -6,7 +6,6 @@ import NavBar from './NavBar';
 import Code from './Code';
 import Package from './Package';
 import Test from './Test';
-
 export default function Client() {
   return (
     <SafeAreaView style={styles.container}>

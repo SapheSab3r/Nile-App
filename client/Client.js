@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import NavBar from './NavBar';
 import Code from './Code';
 import Package from './Package';
-
+import Test from './Test';
 
 export default function Client() {
   return (
@@ -13,6 +13,7 @@ export default function Client() {
       <NavBar />
       <Code />
       <Package />
+      <Test />
 
       <StatusBar style="auto" />
 

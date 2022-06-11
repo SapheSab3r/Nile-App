@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Keyboard, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Keyboard, TextInput, FlatList } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView } from 'react-native-web';
 
 export default class Package extends Component {
     constructor(props) {
@@ -14,7 +13,18 @@ export default class Package extends Component {
         this.setState({ colorId: id });
     }
 
+
+
     render() {
+        //testing data 
+        const list = [
+            { id: '1', name: 'James', date: '3/9/2022', code: 'RA38990125US' },
+            { id: '2', name: 'Ortiz', date: '3/10/2022', code: 'RA38990125US'},
+            { id: '3', name: 'Mile', date: '3/9/2022' , code: 'RA38990125US'},
+            { id: '4', name: 'Thomas', date: '3/9/2022' , code: 'RA38990125US'},
+            { id: '5', name: 'Alice', date: '3/9/2022' , code: 'RA38990125US'},
+            { id: '6', name: 'Mallory', date: '8/9/2022' , code: 'RA38990125US'}
+          ];
 
 
         return (
@@ -39,16 +49,24 @@ export default class Package extends Component {
                 {/*this is the search bar*/}
                 <View style={styles.searchBar} >
                     <EvilIcons name="search" size={30} style={styles.searchIcon} />
-                    <TextInput placeholder="Search" value={this.state.textInput} style={styles.searchText} />
+                    <TextInput placeholder="Search" style={styles.searchText} /> 
                 </View>
-
+                
 
                 {/*listing all the deliveries*/}
-                <View style={styles.info}>
+                <View style={styles.container}>
+                    <FlatList
+                    data={list}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => (
+                        <View style={styles.listItem}>
+                        <Text style={styles.listItemText}>{item.name}</Text>
+                        <Text style={styles.listItemDate}>{item.date}</Text>
+                        <Text style={styles.listItemCode}>{item.code}</Text>
+                        </View>
+                    )}/>
 
                 </View>
-
-
 
 
             </View >
@@ -110,6 +128,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
+        color: '#1648a0',
         fontSize: 20,
     },
 
@@ -147,7 +166,6 @@ const styles = StyleSheet.create({
 
     searchIcon: {
         padding: 5,
-
     },
 
     searchText: {
@@ -155,12 +173,41 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
-    info: {
+    container: {
+        flex: 1,
+        alignContent: 'center',
+        marginLeft: 8,
+        marginRight: 8,
+      },
+    
+      listItem: {
+        width: '100%',
         height: 90,
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'flexstart',
         backgroundColor: '#feffcd',
-        borderRadius: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderRadius: 15,
+        marginTop: 10,
+      },
+    
+      listItemText: {
         margin: 10,
-    },
+        fontSize: 22,
+        fontWeight: 'bold',
+      },
+    
+      listItemDate: {
+        margin: 10,
+        fontSize: 18,
+        fontWeight: 'bold',
+      },
+    
+      listItemCode:{
+        position: 'absolute',
+        top: 35,
+        margin: 15,
+        fontSize: 24,
+      }
+
 });

@@ -7,20 +7,6 @@ import Code from './Code';
 import Package from './Package';
 
 
-// function App() {
-//   useEffect(() => {
-//     fetchPackage();
-//   }, []);
-// }
-
-// const fetchPakage = async () => {
-//   const data = await fetch(
-//     ""
-//   );
-//   const packages = await data.json();
-// };
-
-
 export default function Client() {
   return (
     <SafeAreaView style={styles.container}>

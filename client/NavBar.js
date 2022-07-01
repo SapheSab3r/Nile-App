@@ -7,7 +7,6 @@ export default function App() {
   return (
     <View style={styles.NavBar}>
       <View style={styles.left}>
-        {/* This icon is a place holder for the logo */}
         <Image source={require('../assets/logo_transparent.png')} style={styles.logo} />
 
         <Text style={styles.Header}>Nile</Text>
